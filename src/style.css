@@ -4,7 +4,7 @@ body {
   grid-template-rows: repeat(3, auto);
   grid-template-areas:
     "header header header header header header header header header header header header"
-    "main main main main main main main sidebar sidebar sidebar sidebar sidebar"
+    "main main main main main main main main main sidebar sidebar sidebar"
     "footer footer footer footer footer footer footer footer footer footer footer footer";
   gap: var(--space-size);
 }
@@ -26,8 +26,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 320px);
   grid-auto-rows: auto;
-  grid-row-gap: calc(var(--space-size) * 2);
-  justify-content: start;
+  gap: calc(var(--space-size) * 2) 0;
+  justify-content: space-between;
 }
 
 .client_stories > div > .column:first-child {
@@ -49,65 +49,34 @@ footer {
   gap: 0;
 }
 
-.card-first {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-.card-second {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-.card-third {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-.card-fourth {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-.card-fifth {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-.card-six {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
+.card-first { order: 1; }
+.card-second { order: 2; }
+.card-third { order: 3; }
+.card-fourth { order: 4; }
+.card-fifth { order: 5; }
+.card-six { order: 6; }
 
 aside {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: var(--space-size);
 }
 
-aside .info {
-  grid-row: 1 / 2;
-}
-
-aside form {
-  grid-row: 2 / 3;
-}
-
 aside .info_pill {
-  grid-row: 3 / 4;
-  justify-self: center;
+  align-self: center;
   text-align: center;
   background-color: var(--primary-color, #eee);
   padding: var(--space-size);
   border-radius: 8px;
+}
+
+.client_stories > div > .column:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .client_stories > div > .column:first-child h3 {
