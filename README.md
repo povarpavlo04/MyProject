@@ -64,3 +64,4 @@ Please, note you MUST add all CSS rules in the `src/style.css` file and not chan
 
   ![mockup for flex container in "Client stories" section](images/flexbox_in_client_stories.PNG)
 
+бемц
